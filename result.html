@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pingdom</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="lib/animate/animate.min.css" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 align-items-center">
+        <a href="index.html"><i class="bi bi-arrow-left-circle me-4 fs-4"></i></a>
+        <a href="https://www.tailwindcss.com" class="navbar-brand p-0">
+          <span class="text-primary fs-4">https://www.tailwindcss.com</span>
+          <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+      </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Data -->
+    <div class="container-fluid service pt-5 pb-3">
+      <div class="container pb-5">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6">
+            <h2>1 September 2024 - 7 September 2024</h2>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3 d-flex flex-column align-items-end">
+              <div class="row align-items-end w-100">
+                <div class="col">
+                  <label for="checkInterval" class="form-label">Date Range</label>
+                  <select class="form-select" id="checkInterval" aria-label="Default select example">
+                    <option selected value="Last 7 Days">Last 7 Days</option>
+                    <option value="This Month">This Month</option>
+                    <option value="This Year">This Year</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <button class="btn btn-primary rounded-pill py-2 px-4" style="height: fit-content" data-bs-toggle="modal" data-bs-target="#modalEditPage">Edit Page</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 feature">
+          <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp align-self-stretch" data-wow-delay="0.2s">
+            <div class="feature-item p-4 align-self-stretch h-100">
+              <h4>Status</h4>
+              <h6 class="text-success">Reachable</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp align-self-stretch" data-wow-delay="0.4s">
+            <div class="feature-item p-4 align-self-stretch h-100">
+              <h4>Average Load Time (Ms)</h4>
+              <h6>118.736</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp align-self-stretch" data-wow-delay="0.6s">
+            <div class="feature-item p-4 align-self-stretch h-100">
+              <h4>Page Size (Byte)</h4>
+              <h6>5840</h6>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp align-self-stretch" data-wow-delay="0.8s">
+            <div class="feature-item p-4 align-self-stretch h-100">
+              <h4>Total Request</h4>
+              <h6>19</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Data End -->
+
+    <!-- Page Load Time -->
+    <div class="container-fluid service pt-5 pb-3">
+      <div class="container pb-5">
+        <h3>Page Load Time</h3>
+        <canvas id="pageLoadTime" style="height: auto; max-height: 400px"></canvas>
+      </div>
+    </div>
+    <!-- Page Load Time End -->
+
+    <!-- Latest Filmstrip -->
+    <div class="container-fluid service pt-5 pb-3">
+      <div class="container pb-5">
+        <h3>Latest Filmstrip</h3>
+        <h6>14 August 2024 | 19.00</h6>
+        <iframe src="https://tailwindcss.com" class="w-100" style="height: 100dvh"></iframe>
+      </div>
+    </div>
+    <!-- Latest Filmstrip End -->
+
+    <!-- Latest Test -->
+    <div class="container-fluid service pt-5 pb-3">
+      <div class="container pb-5">
+        <h3>Latest Test</h3>
+        <div class="table-responsive" style="height: auto; max-height: 400px; overflow-y: scroll">
+          <table class="table table-hovered table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Date and Time</th>
+                <th scope="col">Load Time (Ms)</th>
+                <th scope="col">Page Size</th>
+                <th scope="col">Total Request</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>85.379</td>
+                <td>3334</td>
+                <td>19</td>
+                <td><span class="badge rounded-pill bg-success">Reachable</span></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>85.379</td>
+                <td>3334</td>
+                <td>19</td>
+                <td><span class="badge rounded-pill bg-success">Reachable</span></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>85.379</td>
+                <td>3334</td>
+                <td>19</td>
+                <td><span class="badge rounded-pill bg-success">Reachable</span></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>85.379</td>
+                <td>3334</td>
+                <td>19</td>
+                <td><span class="badge rounded-pill bg-success">Reachable</span></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>85.379</td>
+                <td>3334</td>
+                <td>19</td>
+                <td><span class="badge rounded-pill bg-success">Reachable</span></td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>85.379</td>
+                <td>3334</td>
+                <td>19</td>
+                <td><span class="badge rounded-pill bg-success">Reachable</span></td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>85.379</td>
+                <td>3334</td>
+                <td>19</td>
+                <td><span class="badge rounded-pill bg-success">Reachable</span></td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>85.379</td>
+                <td>3334</td>
+                <td>19</td>
+                <td><span class="badge rounded-pill bg-success">Reachable</span></td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>85.379</td>
+                <td>3334</td>
+                <td>19</td>
+                <td><span class="badge rounded-pill bg-success">Reachable</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Latest Test End -->
+
+    <!-- Redirect Status -->
+    <div class="container-fluid service pt-5 pb-3">
+      <div class="container pb-5">
+        <h3>Redirect Status</h3>
+        <h6>Global HTTP Time [3.1903898s], 4x redirect</h6>
+        <div class="table-responsive" style="height: 400px; overflow-y: scroll">
+          <table class="table table-hovered table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Test Date and Time</th>
+                <th scope="col">URL</th>
+                <th scope="col">Status</th>
+                <th scope="col">Page Size (Byte)</th>
+                <th scope="col">Load Time (Ms)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>http://bcanta.com/valleygame1_pxl/</td>
+                <td>200 OK</td>
+                <td>3334</td>
+                <td>200</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>http://fe.r3ste.mobi/mk/gamvalley/game1_non.phpaff_sub=</td>
+                <td>301 Moved Permanently</td>
+                <td>3334</td>
+                <td>187.987</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>http://fe.r3ste.mobi/mk/gamvalley/game1_non.phpaff_sub=</td>
+                <td>302 Moved Permanently</td>
+                <td>3334</td>
+                <td>197.801</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>https://auth2.telkomsel.com/transaksi/tauthwcotoken=lmnms2tscf9e071tiw0c</td>
+                <td>302 Found</td>
+                <td>3334</td>
+                <td>345.210</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h6>14 August 2024 | 19.00</h6>
+        <canvas id="redirectStatus" style="height: auto; max-height: 400px"></canvas>
+      </div>
+    </div>
+    <!-- Redirect Status End -->
+
+    <!-- DNS Check Status -->
+    <div class="container-fluid service pt-5 pb-3">
+      <div class="container pb-5">
+        <h3>DNS Check Status</h3>
+        <h6>Global DNS Time [3.1903898s]</h6>
+        <div class="table-responsive" style="height: auto; max-height: 400px; overflow-y: scroll">
+          <table class="table table-hovered table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Test Date and Time</th>
+                <th scope="col">DNS Name</th>
+                <th scope="col">IP Type</th>
+                <th scope="col">IP Address</th>
+                <th scope="col">Load Time (Ms)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>http://bcanta.com</td>
+                <td>V6</td>
+                <td>2606:4700:3031::6815:5242</td>
+                <td>250.781</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>http://bcanta.com</td>
+                <td>V6</td>
+                <td>2606:4700:3031::6815:5242</td>
+                <td>250.781</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>http://bcanta.com</td>
+                <td>V6</td>
+                <td>2606:4700:3031::6815:5242</td>
+                <td>250.781</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>http://bcanta.com</td>
+                <td>V6</td>
+                <td>2606:4700:3031::6815:5242</td>
+                <td>250.781</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h6>14 August 2024 | 19.00</h6>
+        <canvas id="dnsCheckStartStatus" style="height: auto; max-height: 400px"></canvas>
+      </div>
+    </div>
+    <!-- DNS Check Status End -->
+
+    <!-- Ping Test (5 times) -->
+    <div class="container-fluid service pt-5 pb-3">
+      <div class="container pb-5">
+        <h3>Ping Test (5 times)</h3>
+        <div class="table-responsive" style="height: 400px; overflow-y: scroll">
+          <table class="table table-hovered table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">DNS Name</th>
+                <th scope="col">Packet Sent</th>
+                <th scope="col">Packets Receive Duplicates</th>
+                <th scope="col">Packet Loss</th>
+                <th scope="col">Minimal Duration Test (Ms)</th>
+                <th scope="col">Maximal Duration Test (Ms)</th>
+                <th scope="col">Average Duration Test</th>
+                <th scope="col">Health</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>auth2.telkomsel.com</td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1.800294</td>
+                <td>3.750087</td>
+                <td>2.255462</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>auth2.telkomsel.com</td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1.800294</td>
+                <td>3.750087</td>
+                <td>2.255462</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>auth2.telkomsel.com</td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1.800294</td>
+                <td>3.750087</td>
+                <td>2.255462</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>auth2.telkomsel.com</td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1.800294</td>
+                <td>3.750087</td>
+                <td>2.255462</td>
+                <td>100%</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>14 August 2024 | 19.00</td>
+                <td>auth2.telkomsel.com</td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1.800294</td>
+                <td>3.750087</td>
+                <td>2.255462</td>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Ping Test (5 times) End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalEditPage" tabindex="-1" aria-labelledby="modalEditPageLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalEditPageLabel">Edit Page Speed Check</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="checkInterval" class="form-label">URL</label>
+                <input type="text" class="form-control" id="checkInterval" value="www.tailwindcss.com" />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="websiteName" class="form-label">Website Name</label>
+                <input type="text" class="form-control" id="websiteName" value="tailwindcss" />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="checkInterval" class="form-label">Check Interval</label>
+                <select class="form-select" id="checkInterval" aria-label="Default select example">
+                  <option selected value="60 Minutes">60 Minutes</option>
+                  <option value="120 Minutes">120 Minutes</option>
+                  <option value="180 Minutes">180 Minutes</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/chartInit.js"></script>
+  </body>
+</html>
